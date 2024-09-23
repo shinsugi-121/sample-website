@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPORTS HUB - スポーツコンテンツWebサイト</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+    <header class="bg-white shadow-sm fixed w-full z-10">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-semibold text-gray-800">SPORTS HUB</h1>
+            <nav class="hidden md:flex space-x-6">
+                <a href="#home" class="text-gray-600 hover:text-gray-900 transition duration-300">ホーム</a>
+                <a href="#news" class="text-gray-600 hover:text-gray-900 transition duration-300">ニュース</a>
+                <a href="#events" class="text-gray-600 hover:text-gray-900 transition duration-300">大会情報</a>
+                <a href="#about" class="text-gray-600 hover:text-gray-900 transition duration-300">管理者</a>
+            </nav>
+            <button class="md:hidden text-gray-600 hover:text-gray-900" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <div id="mobile-menu" class="fixed inset-0 bg-white z-20 flex flex-col items-center justify-center hidden">
+        <button class="absolute top-4 right-4 text-gray-600 hover:text-gray-900" onclick="toggleMenu()">
+            <i class="fas fa-times"></i>
+        </button>
+        <nav class="flex flex-col space-y-4 text-xl">
+            <a href="#home" class="text-gray-600 hover:text-gray-900 transition duration-300" onclick="toggleMenu()">ホーム</a>
+            <a href="#news" class="text-gray-600 hover:text-gray-900 transition duration-300" onclick="toggleMenu()">ニュース</a>
+            <a href="#events" class="text-gray-600 hover:text-gray-900 transition duration-300" onclick="toggleMenu()">大会情報</a>
+            <a href="#about" class="text-gray-600 hover:text-gray-900 transition duration-300" onclick="toggleMenu()">管理者</a>
+        </nav>
+    </div>
+
+    <main class="container mx-auto px-4 pt-24 pb-12">
+        <section id="home" class="mb-16">
+            <div class="bg-gray-100 rounded-lg overflow-hidden">
+                <img src="/api/placeholder/1200/400" alt="スポーツイベントの様子" class="w-full h-64 object-cover">
+                <div class="p-8">
+                    <h2 class="text-3xl font-semibold mb-4">スポーツの世界へようこそ</h2>
+                    <p class="text-gray-600 leading-relaxed">最新のスポーツニュース、大会情報、そして熱狂的なファンコミュニティがここに集結。あなたのスポーツライフを更に豊かに！</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="flex flex-col lg:flex-row gap-12">
+            <div class="lg:w-2/3">
+                <section id="news" class="mb-16">
+                    <h2 class="text-2xl font-semibold mb-8 pb-2 border-b border-gray-200">最新ニュース</h2>
+                    <div class="space-y-8">
+                        <article class="bg-white rounded-lg shadow-sm p-6 transition duration-300 hover:shadow-md">
+                            <h3 class="text-xl font-semibold mb-3">新しい大会が発表されました</h3>
+                            <p class="text-gray-600 mb-4 leading-relaxed">来月、東京で新しい大会が開催されます。世界トップクラスの選手たちが集結し、熱い戦いを繰り広げます。</p>
+                            <a href="#" class="text-blue-500 hover:underline">詳細を読む →</a>
+                        </article>
+                        <article class="bg-white rounded-lg shadow-sm p-6 transition duration-300 hover:shadow-md">
+                            <h3 class="text-xl font-semibold mb-3">地域スポーツ振興プログラム始動</h3>
+                            <p class="text-gray-600 mb-4 leading-relaxed">地域のスポーツ活動を支援する新プログラムが始動。子供から大人まで、誰もが気軽にスポーツを楽しめる環境づくりを目指します。</p>
+                            <a href="#" class="text-blue-500 hover:underline">詳細を読む →</a>
+                        </article>
+                    </div>
+                </section>
+
+                <section id="events" class="mb-16">
+                    <h2 class="text-2xl font-semibold mb-8 pb-2 border-b border-gray-200">大会情報</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-white rounded-lg shadow-sm p-6">
+                            <h3 class="text-xl font-semibold mb-3">春季大会</h3>
+                            <p class="text-gray-600 mb-2">日程: 4月15日〜17日</p>
+                            <p class="text-gray-600">場所: 東京スポーツセンター</p>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-sm p-6">
+                            <h3 class="text-xl font-semibold mb-3">夏季選手権</h3>
+                            <p class="text-gray-600 mb-2">日程: 7月20日〜25日</p>
+                            <p class="text-gray-600">場所: 大阪ドーム</p>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-sm p-6">
+                            <h3 class="text-xl font-semibold mb-3">秋季リーグ戦</h3>
+                            <p class="text-gray-600 mb-2">日程: 9月1日〜10月31日</p>
+                            <p class="text-gray-600">場所: 全国各地</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <aside class="lg:w-1/3">
+                <div class="bg-gray-100 rounded-lg p-6 mb-8">
+                    <h2 class="text-xl font-semibold mb-4">ランキング</h2>
+                    <ol class="list-decimal list-inside space-y-2 text-gray-600">
+                        <li>チームA</li>
+                        <li>チームB</li>
+                        <li>チームC</li>
+                        <li>チームD</li>
+                        <li>チームE</li>
+                    </ol>
+                </div>
+
+                <div class="bg-gray-100 rounded-lg p-6">
+                    <h2 class="text-xl font-semibold mb-4">最新動画</h2>
+                    <div class="aspect-w-16 aspect-h-9 mb-4">
+                        <img src="/api/placeholder/320/180" alt="動画サムネイル" class="rounded-lg">
+                    </div>
+                    <h3 class="font-semibold mb-2">先週のハイライト</h3>
+                    <p class="text-gray-600 text-sm">先週の試合から厳選したベストプレイをご覧ください。</p>
+                </div>
+            </aside>
+        </div>
+
+        <section id="about" class="mt-16">
+            <h2 class="text-2xl font-semibold mb-8 pb-2 border-b border-gray-200">管理者について</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-lg shadow-sm p-6 flex items-center space-x-4">
+                    <img src="/api/placeholder/100/100" alt="山田太郎" class="w-24 h-24 rounded-full object-cover">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2">山田太郎</h3>
+                        <p class="text-gray-600 leading-relaxed">元プロ選手。現在は大会運営と選手育成に携わっています。豊富な経験を活かし、次世代のアスリート育成に尽力しています。</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-sm p-6 flex items-center space-x-4">
+                    <img src="/api/placeholder/100/100" alt="佐藤花子" class="w-24 h-24 rounded-full object-cover">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2">佐藤花子</h3>
+                        <p class="text-gray-600 leading-relaxed">スポーツジャーナリスト。最新のスポーツニュースを担当しています。多角的な視点で、スポーツの魅力を伝えることを心がけています。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-100 py-8 mt-16">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-between">
+                <div class="w-full md:w-1/3 mb-6 md:mb-0">
+                    <h3 class="text-xl font-semibold mb-4">SPORTS HUB</h3>
+                    <p class="text-gray-600">スポーツの最新情報をお届けします。</p>
+                </div>
+                <div class="w-full md:w-1/3 mb-6 md:mb-0">
+                    <h3 class="text-xl font-semibold mb-4">リンク</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-600 hover:text-gray-900 transition duration-300">ホーム</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-gray-900 transition duration-300">ニュース</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-gray-900 transition duration-300">大会情報</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-gray-900 transition duration-300">お問い合わせ</a></li>
+                    </ul>
+                </div>
+                <div class="w-full md:w-1/3">
+                    <h3 class="text-xl font-semibold mb-4">フォローする</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-600 hover:text-gray-900 transition duration-300"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-600 hover:text-gray-900 transition duration-300"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-gray-600 hover:text-gray-900 transition duration-300"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-600 hover:text-gray-900 transition duration-300"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 text-center text-gray-600">
+                <p>&copy; 2024 SPORTS HUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
